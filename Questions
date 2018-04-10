@@ -1,0 +1,40 @@
+Questions:
+1. Row 6 - Are you tracking demographic data
+   Do all or any of them have to be > 0?
+   (currently returnig true only if all of them are)
+
+2. Row 8 - Enhanced ecommerce
+   What is the exact name of the Revenue metric?
+   (there are 9 metrics with Revenue in their name:
+   ga:transactionRevenue, ga:revenuePerTransaction, ga:transactionRevenuePerSession,
+   ga:revenuePerItem, ga:itemRevenue, ga:localTransactionRevenue,
+   ga:localItemRevenue, ga:productRevenuePerPurchase, ga:revenuePerUser
+   currently using ga:transactionRevenue)
+
+3. Row 9 - Goal values
+   Currently checks Goal Conversions metric called ga:goalValueAll
+   (this are the available ones:
+   ga:goalStartsAll, ga:goalCompletionsAll, ga:goalValueAll, ga:goalValuePerSession,
+   ga:goalConversionRateAll, ga:goalAbandonsAll, ga:goalAbandonRateAll)
+
+4. Row 10 - Search Console/Adwords linked
+   Only found dimension for Adwords impressions.
+   - Google Search Console API can return its list of
+     domains, but that doesn't necessarily mean
+     they are linked.
+
+5. Row 11 - custom channel groups
+   Can only see the Channel groups with sessions, and the order
+   is random (isn't the same as on Google Analytics).
+   Currently checking if there is a Group with a name different
+   than one of the default 9, if not returns false.
+
+6. Row 3 - spam
+   When matching hostname with specified domain, do they have
+   to be exactly the same, or are variation allowed
+   (example: mydomain.org and mydomain.account.com)
+
+7. All
+   When the date range isn't set the API returns the results
+   for the last 7 days only. Currently it's set to look up
+   last 30 days for every API call it makes.

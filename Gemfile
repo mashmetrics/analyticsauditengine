@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'sinatra'
+gem 'byebug'
+gem 'google-api-client'
+gem 'dotenv'
+gem 'json'
