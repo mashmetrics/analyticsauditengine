@@ -30,7 +30,7 @@ class AnalyticsReporting
     return false unless dimensions && metrics
 
     results = dimensions.zip(metrics)
-    bounce_rate_ok = metrics.select { |x| (x[1].to_i > 100) && (x[0].to_f < 5) && (x[0].to_f > 90)}.count == 0
+    bounce_rate_ok = metrics.select { |x| (x[1].to_i > 100) && ((x[0].to_f < 5) || (x[0].to_f > 90))}.count == 0
 
     not_set = results.select { |x| x[0][1] == '(not set)' }
     not_set_count = not_set.map { |x| x[1][1].to_i }.inject(:+)
